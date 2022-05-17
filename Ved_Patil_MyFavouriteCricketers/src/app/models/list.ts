@@ -28,13 +28,13 @@ export class List {
 		for(var i = 0; i < this.getLength(); i++) {
 		    if(this._contentArray[i].id === index) {
 			return `
-			<div id="cardData" class="m-4">
-				<img src="${this._contentArray[index].imageLink}" class="card-img-top" alt="...">
+			<div id="card" class="m-6">
+				<img src="${this._contentArray[index].imageLink}" class="card-img-top">
 					<div class="card-body bg-dark text-light">
-						<h1 class="mb-2 bg-dark text-light text-center">Name - ${this._contentArray[index].title}</h1>
-						<h2 class="mb-2 bg-dark text-light text-center">Spouse - ${this._contentArray[index].author}</h2>
+						<h3 class="mb-2 bg-dark text-light text-center">Name - ${this._contentArray[index].title}</h3>
+						<h3 class="mb-2 bg-dark text-light text-center">Spouse - ${this._contentArray[index].author}</h3>
 						<h3 class="mb-2 bg-dark text-light text-center">Type - ${this._contentArray[index].type}</h3>
-						<p class="mb-2 bg-dark text-light text-center">About - ${this._contentArray[index].body}</p>
+						<h3 class="mb-2 bg-dark text-light text-center">About - ${this._contentArray[index].body}</h3>
 					</div>
 			</div>`
 		    }
