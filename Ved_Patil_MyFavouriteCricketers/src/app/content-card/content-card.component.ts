@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Content } from '../models/content';
+
 
 @Component({
   selector: 'app-content-card',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-card.component.css']
 })
 export class ContentCardComponent implements OnInit {
+  @Input() cricketers?: Content;
 
   constructor() { }
 
