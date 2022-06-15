@@ -1,0 +1,44 @@
+<div><label>
+    Author name search:
+    <input autofocus #authorToSearchFor>
+  </label>
+  <button (click)="checkForAuthorInList(authorToSearchFor.value)">Check for Author</button>
+</div>
+<div class="author-error" [style]="authorSearchMessage.found ? 'color: blue' : 'color: grey'">
+  {{ authorSearchMessage.message }}
+</div>
+
+<!-- <app-content-card *ngFor="let individualPlayer of chessPlayersList; even as isEven; odd as idOdd" [chessPlayer]="individualPlayer"
+  class="{{ isEven ? 'is-even': ''}}" class="{{ isodd ? 'is-odd': ''}}"></app-content-card> -->
+
+<!-- This ngfor shows all players, no type filter on it -->
+<!-- <app-content-card *ngFor="let individualPlayer of chessPlayersList; even as isEven" [chessPlayer]="individualPlayer"
+  [class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card> -->
+
+<!-- no type -->
+<app-content-card
+  *ngFor="let individualPlayer of (chessPlayersList | filterChessPlayerType); even as isEven; last as isLast"
+  [chessPlayer]="individualPlayer" [class.is-even]="isEven" [class.is-odd]="!isEven" class="no-type" [isLast]="isLast"
+  [class]="individualPlayer.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'player-found' : ''">
+</app-content-card>
+
+<!-- IM type -->
+<app-content-card
+  *ngFor="let individualPlayer of (chessPlayersList | filterChessPlayerType: 'IM'); even as isEven; last as isLast"
+  [chessPlayer]="individualPlayer" [class.is-even]="isEven" [class.is-odd]="!isEven" class="im-type" [isLast]="isLast"
+  [class.player-found]="individualPlayer.author.toLowerCase() === authorToSearchFor.value.toLowerCase()">
+</app-content-card>
+
+<!-- FM type -->
+<app-content-card
+  *ngFor="let individualPlayer of (chessPlayersList | filterChessPlayerType: 'FM'); even as isEven; last as isLast"
+  [chessPlayer]="individualPlayer" [class.is-even]="isEven" [class.is-odd]="!isEven" class="fm-type" [isLast]="isLast"
+  [class.player-found]="individualPlayer.author.toLowerCase() === authorToSearchFor.value.toLowerCase()">
+</app-content-card>
+
+<!-- GM type -->
+<app-content-card
+  *ngFor="let individualPlayer of (chessPlayersList | filterChessPlayerType: 'GM'); even as isEven; last as isLast"
+  [chessPlayer]="individualPlayer" [class.is-even]="isEven" [class.is-odd]="!isEven" class="gm-type" [isLast]="isLast"
+  [class.player-found]="individualPlayer.author.toLowerCase() === authorToSearchFor.value.toLowerCase()">
+</app-content-card>
