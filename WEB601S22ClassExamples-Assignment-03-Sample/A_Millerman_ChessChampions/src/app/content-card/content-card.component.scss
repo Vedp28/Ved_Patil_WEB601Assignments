@@ -1,0 +1,86 @@
+:host {
+  border: 2px dashed crimson;
+  display: block;
+  padding: 16px;
+  margin: 0 auto 16px;
+  max-width: 500px;
+  border-radius: 25px;
+
+
+  &.is-odd {
+    background-color: #ffffff;
+  }
+
+  &.is-even {
+    background-color: lightgrey;
+  }
+
+  &.no-type {
+    background-color: #ddd;
+    color: #0a2719;
+  }
+
+  &.im-type {
+    background-color: darkviolet;
+    color: black;
+  }
+
+  &.fm-type {
+    background-color: maroon;
+    color: white;
+  }
+
+  &.gm-type {
+    background-color: dodgerblue;
+    color: #eeeeee;
+  }
+
+  &.player-found {
+    border-width: 5px;
+  }
+}
+
+
+header {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+p {
+  font-weight: bold;
+}
+
+.author {
+  text-align: center;
+}
+
+.type {
+  text-align: right;
+  font-weight: bold;
+}
+
+.hashtags {
+  border: 1px solid #000;
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: aquamarine;
+  border-radius: 10px;
+
+  span {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lemonchiffon;
+    color: #000000;
+    padding: 8px;
+    display: inline-block;
+    margin: 0 8px;
+    font-weight: bold;
+  }
+}
