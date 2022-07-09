@@ -1,5 +1,32 @@
-<div>
-    <app-content-card *ngFor="let item of cricketers;" [cricketers]="item"
-      >
-    </app-content-card>
-  </div>
+<div><label>
+  Author name search:
+  <input autofocus #authorToSearchFor>
+</label>
+<button (click)="checkForAuthorInList(input.value)">Check for Author</button>
+
+<input id="ouput" #input value="{{authorCheck}}">
+</div>
+
+
+<!-- <app-content-card *ngFor="let individualPlayer of chessPlayersList; even as isEven; odd as idOdd" [cricketers]="individualPlayer"
+class="{{ isEven ? 'is-even': ''}}" class="{{ isodd ? 'is-odd': ''}}"></app-content-card> -->
+
+<!-- This ngfor shows all players, no type filter on it -->
+<!-- <app-content-card *ngFor="let individualPlayer of chessPlayersList; even as isEven" [chessPlayer]="individualPlayer"
+[class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card> -->
+
+<h1>All-Rounder</h1>
+<div *ngFor="let item of (cricketers | filterCricketPlayerType); index as i; first as isFirst; odd as odd; even as even;" >
+    <app-content-card *ngIf="item.type==='All-Rounder'" [cricketers]="item" class="cricketers-{{i-1}}" class="All-Rounder"></app-content-card>
+</div>
+
+<h1>Batsman</h1>
+
+ <div *ngFor="let item of (cricketers | filterCricketPlayerType); index as i; first as isFirst; odd as odd; even as even;" >
+    <app-content-card *ngIf="item.type==='Batsman'" [cricketers]="item" class="cricketers-{{i-1}}" class="Batsman"></app-content-card>
+ </div>
+
+<h1 >No Type</h1>
+<div *ngFor="let item of (cricketers | filterCricketPlayerType); index as i; first as isFirst; odd as odd; even as even;" >
+    <app-content-card *ngIf="item.type===''" [cricketers]="item" class="cricketers-{{i-1}}" class="no"></app-content-card>
+ </div>
