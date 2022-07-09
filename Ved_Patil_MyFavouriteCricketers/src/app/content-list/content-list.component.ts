@@ -52,7 +52,7 @@ export class ContentListComponent implements OnInit {
       title: 'James Anderson',
       body: 'James Michael Anderson OBE is an English international cricketer who plays for Lancashire County Cricket Club and the England cricket team. He is also a part time cricket commentator at BBC.',
       author: ' Daniella Lloyd',
-      imageLink: 'https://cdn-wp.thesportsrush.com/2021/12/085268f8-josh-inglis-1.jpg',
+      imageLink: '',
       type: '',
       hashtags: ['James Anderson']
     },

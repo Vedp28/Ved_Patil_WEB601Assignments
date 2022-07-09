@@ -1,8 +1,27 @@
-<h1>{{cricketers?.title}}</h1>
-<img *ngIf="cricketers" [src]="cricketers.imageLink">
+<header class="title" appHighlightImportantData highlightType="title" colour="cadetblue">{{cricketers?.title}}</header>
+
+<img *ngIf=" cricketers && cricketers.imageLink; else defaultChessImage" [src]="cricketers?.imageLink">
+
+<ng-template #defaultChessImage>
+  <img alt="Default Chess Image"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK43JJvAsvh4JhyDOfBrKe_UuDhQX7SCJX1Q&usqp=CAU">
+</ng-template>
+
   <p class="body" *ngIf="cricketers && cricketers.body; else elseBlockNameIsWhateverYouWant">{{cricketers?.body}}</p>
   <ng-template #elseBlockNameIsWhateverYouWant>
     <p class="not-found">No body content found</p>
   </ng-template>
+<<<<<<< Updated upstream
   <div class="type">{{cricketers?.type}}</div>
   <div>{{cricketers?.hashtags}}</div>
+=======
+
+  <div appHighlightImportantData [highlightType]="'type'"  class="type">{{cricketers?.type}}</div>
+
+  <div >{{cricketers?.author}}</div>
+
+  <div appHighlightImportantData highlightType="tag">{{cricketers?.hashtags}}</div>
+
+
+  
+>>>>>>> Stashed changes
