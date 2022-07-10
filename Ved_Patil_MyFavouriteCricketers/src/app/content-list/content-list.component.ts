@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../models/content';
+import { PlayerService } from '../services/player.service';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { Content } from '../models/content';
 })
 export class ContentListComponent implements OnInit {
   cricketers:Content[];
+
 
   constructor() { 
     this.cricketers= [{
@@ -75,10 +77,35 @@ export class ContentListComponent implements OnInit {
       hashtags: ['Ravi Jadeja']
     }
     ]
+=======
+  hikaru: Content = {
+    id: 3,
+    title: 'Hikaru Nakamura',
+    body: "A chess champion who became a successful youtuber instead",
+    author: "Alex Millerman",
+    type: "GM",
+    hashtags: ["supergm", "indepthanalysis"]
+  }
+  types: string[] = ["", "IM", "FM", "GM"];
+  authorSearchMessage = {
+    message: "",
+    found: false
+  };
+
+  
+  constructor(private PlayerService: PlayerService) {
+    this.cricketers = [];
+
+>>>>>>> Stashed changes
   }
 
 
   ngOnInit(): void {
+    // getContent test
+    this.PlayerService.getContent().subscribe(chessChampionsArray =>
+      this.cricketers = chessChampionsArray);
+
+    
   }
 
 }

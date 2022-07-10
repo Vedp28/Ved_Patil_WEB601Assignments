@@ -13,6 +13,12 @@ export class ContentCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if (this.cricketers) {
+      console.log("value of chess player: ", this.cricketers.title);
+    }
+  }
+  displayAuthorAndId(): void {
+    console.log("Chess Player Author: ", this.cricketers?.author, ", Chess Player ID: ", this.cricketers?.id);
   }
 
 }
