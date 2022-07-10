@@ -7,12 +7,12 @@ import { Content } from './models/content';
 export class FilterCricketPlayerTypePipe implements PipeTransform {
 
   transform(listOfCricketPlayers: Content[], typeToFilterBy?: string): Content[] {
-    return listOfCricketPlayers.filter(cricketPlayer => {
-      if (typeToFilterBy) {
-        return typeToFilterBy === cricketPlayer.type;
+    return listOfCricketPlayers.filter(filterCricketPlayerType => {
+ 
+        return !filterCricketPlayerType.type?.length 
+         || filterCricketPlayerType.type == "All-Rounder" || filterCricketPlayerType.type =="Batsman" ;
+
+        });
       }
-      return !cricketPlayer.type;
-    });
-  }
 
 }
