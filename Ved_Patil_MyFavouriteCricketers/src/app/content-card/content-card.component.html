@@ -1,8 +1,12 @@
-<h1>{{cricketers?.title}}</h1>
+<h1> <a [routerLink]="['/detail', cricketers?.id ?? 0]"> {{cricketers?.title}} </a></h1>
+
 <img *ngIf="cricketers" [src]="cricketers.imageLink">
-  <p class="body" *ngIf="cricketers && cricketers.body; else elseBlockNameIsWhateverYouWant">{{cricketers?.body}}</p>
-  <ng-template #elseBlockNameIsWhateverYouWant>
+  <!-- <p class="body" *ngIf="cricketers && cricketers.body; else elseBlockNameIsWhateverYouWant">{{cricketers?.body}}</p> -->
+
+  <!-- <ng-template #elseBlockNameIsWhateverYouWant>
     <p class="not-found">No body content found</p>
-  </ng-template>
+  </ng-template> -->
+
   <div class="type">{{cricketers?.type}}</div>
+
   <div>{{cricketers?.hashtags}}</div>
