@@ -19,14 +19,8 @@ export class PlayerService {
    * @param id
    * @returns
    */
-  getContentItem(id: number): Observable<Content> {
-    for (var i = 0; i < cricketer.length; i++) // iterate through each chess champion
-    {
-      if (cricketer[i].id === id) { // found the item
-        return of(cricketer[i]);
-      }
-    }
-    return of(DEFAULTCHESSCONTENT); // need to return something if the content isn't there
+   getContentItem(id: number): Observable<Content> {
+    return of(cricketer[id]);
   }
 
   addContentItem(newContentItem: Content): Observable<Content[]> {

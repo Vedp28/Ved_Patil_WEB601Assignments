@@ -1,11 +1,1 @@
-<<div class="chess-search">
-    <label>
-      Chess Champion Search:
-      <input type="number" autofocus #idNumber>
-    </label>
-    <br>
-    <button (click)="checkForIdInList(idNumber.value)">Check for player at id</button>
-  </div>
-  <app-content-card [cricketers]="individualPlayer" class="single-item-on-app-component"></app-content-card>
-  
-  <app-content-list></app-content-list>
+<router-outlet></router-outlet>
