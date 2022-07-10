@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContentListComponent } from './content-list/content-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { ContentSearchComponent } from './content-search/content-search.component';
 
 
 
@@ -22,10 +23,10 @@ const routes: Routes = [
     path: "detail/:id",
     component: ContentDetailComponent
   },
-  // {
-  //   path: "search",
-  //   component: ContentSearchComponent,
-  // },
+  {
+    path: "search",
+    component: ContentSearchComponent,
+  },
   // {
   //   path: '**',
   //   loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)

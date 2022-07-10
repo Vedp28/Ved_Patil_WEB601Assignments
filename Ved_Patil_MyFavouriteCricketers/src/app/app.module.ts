@@ -7,6 +7,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { FilterCricketPlayerTypePipe } from './filter-cricket-player-type.pipe';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ContentSearchComponent } from './content-search/content-search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
     ContentListComponent,
     ContentCardComponent,
     FilterCricketPlayerTypePipe,
-    ContentDetailComponent
+    ContentDetailComponent,
+    ContentSearchComponent
   ],
   imports: [
     BrowserModule,
