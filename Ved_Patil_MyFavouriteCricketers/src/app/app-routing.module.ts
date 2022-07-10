@@ -4,6 +4,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { ContentSearchComponent } from './content-search/content-search.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 
@@ -27,10 +28,10 @@ const routes: Routes = [
     path: "search",
     component: ContentSearchComponent,
   },
-  // {
-  //   path: '**',
-  //   loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
-  // }
+  {
+    path: "**",
+    component: PagenotfoundComponent
+  },
 ];
 
 @NgModule({
