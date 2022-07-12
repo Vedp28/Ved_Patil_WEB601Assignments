@@ -5,12 +5,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ChangeContentComponent } from './change-content/change-content.component';
 
 
 
 
 
 const routes: Routes = [
+  {
+    path: "addContent",
+    component: ChangeContentComponent
+  },
   {
     path: "",
     redirectTo: "/list",
