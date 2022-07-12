@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NavComponent } from './nav/nav.component';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { NavComponent } from './nav/nav.component';
     ContentDetailComponent,
     ContentSearchComponent,
     PagenotfoundComponent,
-    NavComponent
+    NavComponent,
+    InMemoryDataService
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
