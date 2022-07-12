@@ -12,6 +12,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NavComponent } from './nav/nav.component';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -22,13 +25,17 @@ import { FormsModule } from '@angular/forms';
     ContentDetailComponent,
     ContentSearchComponent,
     PagenotfoundComponent,
-    NavComponent,
-    InMemoryDataService
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {
+      delay: 1000,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
