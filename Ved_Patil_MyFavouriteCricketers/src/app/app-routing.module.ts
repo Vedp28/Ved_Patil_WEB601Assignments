@@ -34,6 +34,14 @@ const routes: Routes = [
     component: ContentSearchComponent,
   },
   {
+    path: "addContent",
+    component: ContentSearchComponent,
+  },
+  {
+    path: "updateContent",
+    component: ContentSearchComponent,
+  },
+  {
     path: "**",
     component: PagenotfoundComponent
   },
