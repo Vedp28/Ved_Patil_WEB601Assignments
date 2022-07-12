@@ -9,6 +9,7 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
 import { AppRoutingModule } from './app-routing.module';
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     FilterCricketPlayerTypePipe,
     ContentDetailComponent,
     ContentSearchComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
